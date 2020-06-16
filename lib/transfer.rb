@@ -19,12 +19,13 @@ class Transfer
   end
   
   def execute_transaction
-    count = 0
     
+    while status = 'pending' do
+      
       sender.balance -= amount
       receiver.balance += amount
-      @status = 'complete'
-      count++
+      status = 'complete'
+    end
     
   end
   
