@@ -20,14 +20,13 @@ class Transfer
   
   def execute_transaction
     
-    while @status = 'pending' do
-      
+    if @status = 'pending'
       sender.balance -= amount
       receiver.balance += amount
-      
+      @status = 'complete'
+    else
+      "Invalid Transaction."
     end
-    
-    @status = 'complete'
     
   end
   
