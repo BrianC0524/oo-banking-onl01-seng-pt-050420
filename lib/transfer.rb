@@ -24,8 +24,10 @@ class Transfer
       
       sender.balance -= amount
       receiver.balance += amount
-      @status = 'complete'
+      
     end
+    
+    @status = 'complete'
     
   end
   
