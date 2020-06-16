@@ -20,11 +20,11 @@ class Transfer
   
   def execute_transaction
     
-    while status = 'pending' do
+    while @status = 'pending' do
       
       sender.balance -= amount
       receiver.balance += amount
-      status = 'complete'
+      @status = 'complete'
     end
     
   end
