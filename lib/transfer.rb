@@ -20,7 +20,7 @@ class Transfer
   
   def execute_transaction
     count = 0
-    while count < 1 do
+    
       sender.balance -= amount
       receiver.balance += amount
       @status = 'complete'
